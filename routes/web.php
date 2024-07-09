@@ -4,6 +4,7 @@ use App\Http\Controllers\GaleriaController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\metadataController;
 use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -44,7 +45,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/projects/edit/{id}', [GaleriaController::class, 'edit'])->name('admin.projects.edit');
     Route::put('/projects/update/{id}', [GaleriaController::class, 'update'])->name('admin.projects.update');
     
-    Route::get('/teams', [metadataController::class, 'teams'])->name('admin.teams');
+    Route::get('/teams', [TeamController::class, 'index'])->name('admin.teams');
+    Route::get('/teams/create', [TeamController::class, 'create'])->name('admin.teams.create');
+    Route::post('/teams/store', [TeamController::class, 'store'])->name('admin.teams.store');
+    Route::delete('/teams/destroy/{id}', [TeamController::class, 'destroy'])->name('admin.teams.destroy');
+    Route::get('/teams/edit/{id}', [TeamController::class, 'edit'])->name('admin.teams.edit');
+    Route::put('/teams/update/{id}', [TeamController::class, 'update'])->name('admin.teams.update');
+
     Route::get('/faq', [metadataController::class, 'faq'])->name('admin.faq');
     Route::get('/testimonials', [metadataController::class, 'testimonials'])->name('admin.testimonials');
     Route::get('/contact', [metadataController::class, 'contact'])->name('admin.contact');

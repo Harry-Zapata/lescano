@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\galeria;
 use App\Models\inicio;
 use App\Models\servicios;
+use App\Models\team;
 use Illuminate\Http\Request;
 
 class InicioController extends Controller
@@ -18,7 +19,8 @@ class InicioController extends Controller
         $inicio = inicio::find($id);
         $servicios = servicios::all();
         $galeria = galeria::all();
-        return view('landing.index' , compact('inicio','servicios','galeria'));
+        $team = team::all();
+        return view('landing.index' , compact('inicio','servicios','galeria','team'));
     }
 
     public function panel(){

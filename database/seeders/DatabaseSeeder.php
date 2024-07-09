@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\galeria;
 use App\Models\inicio;
 use App\Models\servicios;
+use App\Models\team;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -48,7 +49,7 @@ class DatabaseSeeder extends Seeder
             'modalTituloNosotros' => 'Solar Energy System',
             'modalImgNosotros' => 'default-icon.png',
             'modalTextoNosotros' => 'Sit eos diam rebum amet stet sit lorem invidunt, kasd dolor ea dolores ut nonumy, sea est rebum dolore dolor. Lorem tempor tempor gubergren dolor dolor dolor. Kasd amet labore voluptua justo diam, dolore accusam duo est stet nonumy tempor dolores sadipscing duo. Stet at et nonumy erat et sed.Sit eos diam rebum amet stet sit lorem invidunt, kasd dolor ea dolores ut nonumy, sea est rebum dolore dolor. Lorem tempor tempor gubergren dolor dolor dolor. Kasd amet labore voluptua justo diam, dolore accusam duo est stet nonumy tempor dolores sadipscing duo. Stet at et nonumy erat et sed.',
-            'TextoGaleria'=> "Nuestros Proyectos",
+            'TextoGaleria' => "Nuestros Proyectos",
         ]);
 
         servicios::factory()->create([
@@ -79,28 +80,65 @@ class DatabaseSeeder extends Seeder
         ]);
 
         galeria::factory()->create([
-            'imagen'=>'default-icon.png',
-            'inicio_id'=>'1',
+            'imagen' => 'default-icon.png',
+            'inicio_id' => '1',
         ]);
         galeria::factory()->create([
-            'imagen'=>'default-icon.png',
-            'inicio_id'=>'1',
+            'imagen' => 'default-icon.png',
+            'inicio_id' => '1',
         ]);
         galeria::factory()->create([
-            'imagen'=>'default-icon.png',
-            'inicio_id'=>'1',
+            'imagen' => 'default-icon.png',
+            'inicio_id' => '1',
         ]);
         galeria::factory()->create([
-            'imagen'=>'default-icon.png',
-            'inicio_id'=>'1',
+            'imagen' => 'default-icon.png',
+            'inicio_id' => '1',
         ]);
         galeria::factory()->create([
-            'imagen'=>'default-icon.png',
-            'inicio_id'=>'1',
+            'imagen' => 'default-icon.png',
+            'inicio_id' => '1',
         ]);
         galeria::factory()->create([
-            'imagen'=>'default-icon.png',
-            'inicio_id'=>'1',
+            'imagen' => 'default-icon.png',
+            'inicio_id' => '1',
+        ]);
+
+        team::factory()->create([
+            'nombre' => 'Donald John',
+            'puesto' => 'CEO & Founder',
+            'texto' => 'Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem',
+            'imagen' => 'default-icon.png',
+
+            'twitter' => 'https://twitter.com/',
+            'facebook' => 'https://facebook.com/',
+            'instagram' => 'https://instagram.com/',
+
+            'inicio_id' => '1',
+        ]);
+        team::factory()->create([
+            'nombre' => 'Adam Phillips',
+            'puesto' => 'Engineer',
+            'texto' => 'Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem',
+            'imagen' => 'default-icon.png',
+
+            'twitter' => 'https://twitter.com/',
+            'facebook' => 'https://facebook.com/',
+            'instagram' => 'https://instagram.com/',
+
+            'inicio_id' => '1',
+        ]);
+        team::factory()->create([
+            'nombre' => 'Thomas Olsen',
+            'puesto' => 'Engineer',
+            'texto' => 'Lorem elitr magna stet rebum dolores sed. Est stet labore est lorem lorem',
+            'imagen' => 'default-icon.png',
+
+            'twitter' => 'https://twitter.com/',
+            'facebook' => 'https://facebook.com/',
+            'instagram' => 'https://instagram.com/',
+
+            'inicio_id' => '1',
         ]);
     }
 }
