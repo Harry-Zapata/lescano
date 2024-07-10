@@ -7,6 +7,7 @@ use App\Models\galeria;
 use App\Models\inicio;
 use App\Models\servicios;
 use App\Models\team;
+use App\Models\testimonio;
 use Illuminate\Http\Request;
 
 class InicioController extends Controller
@@ -22,7 +23,8 @@ class InicioController extends Controller
         $galeria = galeria::all();
         $team = team::all();
         $faq = faq::all();
-        return view('landing.index' , compact('inicio','servicios','galeria','team','faq'));
+        $testimonio = testimonio::all();
+        return view('landing.index' , compact('inicio','servicios','galeria','team','faq','testimonio'));
     }
 
     public function panel(){

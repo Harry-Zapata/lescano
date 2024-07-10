@@ -7,6 +7,7 @@ use App\Models\galeria;
 use App\Models\inicio;
 use App\Models\servicios;
 use App\Models\team;
+use App\Models\testimonio;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -142,21 +143,56 @@ class DatabaseSeeder extends Seeder
             'inicio_id' => '1',
         ]);
         faq::factory()->create([
-            "pregunta"=>"Why Switch to Solar?",
-            "respuesta1"=>"Vero dolor amet no eos ipsum erat",
-            "respuesta2"=>"Lorem tempor tempor gubergren dolor dolor dolor",
-            "respuesta3"=>"Nonumy tempor dolores sadipscing duo",
-            "respuesta4"=>"Kasd dolor ea dolores ut nonumy", 
+            "pregunta" => "Why Switch to Solar?",
+            "respuesta1" => "Vero dolor amet no eos ipsum erat",
+            "respuesta2" => "Lorem tempor tempor gubergren dolor dolor dolor",
+            "respuesta3" => "Nonumy tempor dolores sadipscing duo",
+            "respuesta4" => "Kasd dolor ea dolores ut nonumy",
 
             "inicio_id" => "1",
         ]);
         faq::factory()->create([
-            "pregunta"=>"Why Choose Us?",
-            "respuesta1"=>"Vero dolor amet no eos ipsum erat",
-            "respuesta2"=>"Lorem tempor tempor gubergren dolor dolor dolor",
-            "respuesta3"=>"Nonumy tempor dolores sadipscing duo",
-            "respuesta4"=>"Kasd dolor ea dolores ut nonumy", 
+            "pregunta" => "Why Choose Us?",
+            "respuesta1" => "Vero dolor amet no eos ipsum erat",
+            "respuesta2" => "Lorem tempor tempor gubergren dolor dolor dolor",
+            "respuesta3" => "Nonumy tempor dolores sadipscing duo",
+            "respuesta4" => "Kasd dolor ea dolores ut nonumy",
 
+            "inicio_id" => "1",
+        ]);
+        testimonio::factory()->create([
+            "nombre" => "John Doe",
+            "cargo" => "CEO",
+            "imagen" => "default-icon.png",
+            "texto" => "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo",
+            "inicio_id" => "1",
+        ]);
+        testimonio::factory()->create([
+            "nombre" => "Jane Doe",
+            "cargo" => "CEO",
+            "imagen" => "default-icon.png",
+            "texto" => "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo",
+            "inicio_id" => "1",
+        ]);
+        testimonio::factory()->create([
+            "nombre" => "Maria vazquez",
+            "cargo" => "Consultor",
+            "imagen" => "default-icon.png",
+            "texto" => "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo",
+            "inicio_id" => "1",
+        ]);
+        testimonio::factory()->create([
+            "nombre" => "Pedro Perez",
+            "cargo" => "Conductor",
+            "imagen" => "default-icon.png",
+            "texto" => "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo",
+            "inicio_id" => "1",
+        ]);
+        testimonio::factory()->create([
+            "nombre" => "Jose Carlos",
+            "cargo" => "President",
+            "imagen" => "default-icon.png",
+            "texto" => "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo",
             "inicio_id" => "1",
         ]);
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\InicioController;
 use App\Http\Controllers\metadataController;
 use App\Http\Controllers\ServiciosController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\TestimonioController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -56,7 +57,13 @@ Route::prefix('admin')->group(function () {
     Route::get('/faq', [FaqController::class, 'index'])->name('admin.faq');
     Route::put('/faq/update/{id}', [FaqController::class, 'update'])->name('admin.faq.update');
 
-    Route::get('/testimonials', [metadataController::class, 'testimonials'])->name('admin.testimonials');
+    Route::get('/testimonials', [TestimonioController::class, 'index'])->name('admin.testimonials');
+    Route::get('/testimonials/create', [TestimonioController::class, 'create'])->name('admin.testimonials.create');
+    Route::post('/testimonials/store', [TestimonioController::class, 'store'])->name('admin.testimonials.store');
+    Route::delete('/testimonials/destroy/{id}', [TestimonioController::class, 'destroy'])->name('admin.testimonials.destroy');
+    Route::get('/testimonials/edit/{id}', [TestimonioController::class, 'edit'])->name('admin.testimonials.edit');
+    Route::put('/testimonials/update/{id}', [TestimonioController::class, 'update'])->name('admin.testimonials.update');
+
     Route::get('/contact', [metadataController::class, 'contact'])->name('admin.contact');
     Route::get('/footer', [metadataController::class, 'footer'])->name('admin.footer');
 });
