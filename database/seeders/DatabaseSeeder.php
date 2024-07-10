@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\faq;
 use App\Models\galeria;
 use App\Models\inicio;
 use App\Models\servicios;
@@ -139,6 +140,24 @@ class DatabaseSeeder extends Seeder
             'instagram' => 'https://instagram.com/',
 
             'inicio_id' => '1',
+        ]);
+        faq::factory()->create([
+            "pregunta"=>"Why Switch to Solar?",
+            "respuesta1"=>"Vero dolor amet no eos ipsum erat",
+            "respuesta2"=>"Lorem tempor tempor gubergren dolor dolor dolor",
+            "respuesta3"=>"Nonumy tempor dolores sadipscing duo",
+            "respuesta4"=>"Kasd dolor ea dolores ut nonumy", 
+
+            "inicio_id" => "1",
+        ]);
+        faq::factory()->create([
+            "pregunta"=>"Why Choose Us?",
+            "respuesta1"=>"Vero dolor amet no eos ipsum erat",
+            "respuesta2"=>"Lorem tempor tempor gubergren dolor dolor dolor",
+            "respuesta3"=>"Nonumy tempor dolores sadipscing duo",
+            "respuesta4"=>"Kasd dolor ea dolores ut nonumy", 
+
+            "inicio_id" => "1",
         ]);
     }
 }

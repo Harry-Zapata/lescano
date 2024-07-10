@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\faq;
-use App\Models\galeria;
 use App\Models\inicio;
-use App\Models\servicios;
-use App\Models\team;
 use Illuminate\Http\Request;
 
-class InicioController extends Controller
+class FaqController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,16 +15,10 @@ class InicioController extends Controller
     {
         $id = 1;
         $inicio = inicio::find($id);
-        $servicios = servicios::all();
-        $galeria = galeria::all();
-        $team = team::all();
         $faq = faq::all();
-        return view('landing.index' , compact('inicio','servicios','galeria','team','faq'));
+        return view('admin.faq', compact('inicio', 'faq'));
     }
 
-    public function panel(){
-        return view('admin.index');
-    }
     /**
      * Show the form for creating a new resource.
      */
@@ -47,7 +38,7 @@ class InicioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(inicio $inicio)
+    public function show(faq $faq)
     {
         //
     }
@@ -55,23 +46,31 @@ class InicioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(inicio $inicio)
+    public function edit(faq $faq)
     {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, inicio $inicio)
+    public function update(Request $request, faq $faq)
     {
-        //
+        $faq = faq::find($request->id);
+        $data = [
+            'pregunta' => $request->input('pregunta'),
+            'respuesta1' => $request->input('respuesta1'),
+            'respuesta2' => $request->input('respuesta2'),
+            'respuesta3' => $request->input('respuesta3'),
+            'respuesta4' => $request->input('respuesta4'),
+        ];
+        $faq->update($data);
+        return redirect()->route('admin.faq')->with('info', 'Se actualizo correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(inicio $inicio)
+    public function destroy(faq $faq)
     {
         //
     }

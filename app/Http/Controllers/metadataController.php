@@ -144,12 +144,6 @@ class metadataController extends Controller
         return redirect()->route('admin.about')->with('info', 'Se actualizo correctamente');
     }
 
-    public function faq()
-    {
-        $id = 1;
-        $inicio = inicio::find($id);
-        return view('admin.faq', compact('inicio'));
-    }
     public function testimonials()
     {
         $id = 1;

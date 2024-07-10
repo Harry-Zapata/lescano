@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GaleriaController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\metadataController;
@@ -52,7 +53,9 @@ Route::prefix('admin')->group(function () {
     Route::get('/teams/edit/{id}', [TeamController::class, 'edit'])->name('admin.teams.edit');
     Route::put('/teams/update/{id}', [TeamController::class, 'update'])->name('admin.teams.update');
 
-    Route::get('/faq', [metadataController::class, 'faq'])->name('admin.faq');
+    Route::get('/faq', [FaqController::class, 'index'])->name('admin.faq');
+    Route::put('/faq/update/{id}', [FaqController::class, 'update'])->name('admin.faq.update');
+
     Route::get('/testimonials', [metadataController::class, 'testimonials'])->name('admin.testimonials');
     Route::get('/contact', [metadataController::class, 'contact'])->name('admin.contact');
     Route::get('/footer', [metadataController::class, 'footer'])->name('admin.footer');
