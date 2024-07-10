@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\contacto;
 use App\Models\faq;
 use App\Models\galeria;
 use App\Models\inicio;
@@ -194,6 +195,16 @@ class DatabaseSeeder extends Seeder
             "imagen" => "default-icon.png",
             "texto" => "Al contrario del pensamiento popular, el texto de Lorem Ipsum no es simplemente texto aleatorio. Tiene sus raices en una pieza cl´sica de la literatura del Latin, que data del año 45 antes de Cristo",
             "inicio_id" => "1",
+        ]);
+
+        contacto::factory()->create([
+           "nombre"=>"ejemplo",
+           "email"=>"ejemplo",
+           "telefono"=>"ejemplo",
+           "asunto"=>"ejemplo",
+           "mensaje"=>"ejemplo",
+           
+           "inicio_id"=>"1",
         ]);
     }
 }

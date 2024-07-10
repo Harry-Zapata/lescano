@@ -14,10 +14,23 @@
 <script src="{{ asset('assets/lib/isotope/isotope.pkgd.min.js') }}"></script>
 <script src="{{ asset('assets/lib/lightbox/js/lightbox.min.js') }}"></script>
 
-<!-- Contact Javascript File -->
-<script src="{{ asset('mail/jqBootstrapValidation.min.js') }}"></script>
-<script src="{{ asset('mail/contact.js') }}"></script>
-
+<script>
+    // si el formulario #contactForm es invalido, mostrar un alerta de error
+    let form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+            let mensajeError = document.getElementById("mensajeError");
+            mensajeError.textContent = "Todos los campos deven ser llenados"
+            setTimeout(() => {
+                document.getElementById('mensajeError').textContent = ""
+            }, 5000);
+            return false;
+        }
+        form.classList.add('was-validated');
+    }, false);
+</script>
 <!-- Template Javascript -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
 

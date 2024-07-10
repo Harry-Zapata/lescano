@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GaleriaController;
 use App\Http\Controllers\InicioController;
@@ -64,9 +65,11 @@ Route::prefix('admin')->group(function () {
     Route::get('/testimonials/edit/{id}', [TestimonioController::class, 'edit'])->name('admin.testimonials.edit');
     Route::put('/testimonials/update/{id}', [TestimonioController::class, 'update'])->name('admin.testimonials.update');
 
-    Route::get('/contact', [metadataController::class, 'contact'])->name('admin.contact');
+    Route::get('/contact', [ContactoController::class, 'index'])->name('admin.contact');
+    
     Route::get('/footer', [metadataController::class, 'footer'])->name('admin.footer');
 });
+Route::post('/contact/store', [ContactoController::class, 'store'])->name('admin.contact.store');
 
 Route::middleware([
     'auth:sanctum',
